@@ -1,1 +1,1 @@
-Index
+{{$data}}
