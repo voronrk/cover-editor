@@ -1,5 +1,5 @@
 <div>
-    <form class="form" method="POST" enctype="multipart/form-data" action={{route('upload-background')}}>
+    <form class="form" method="POST" enctype="multipart/form-data" action={{route('background.upload')}}>
     @csrf
         <div class="field">
           <label class="label">Изображение для фона</label>

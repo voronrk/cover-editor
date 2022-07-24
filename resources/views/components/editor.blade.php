@@ -23,8 +23,8 @@
 </form>
 
 <?php
-        echo "<pre>";
+        {{-- echo "<pre>";
         echo print_r($_REQUEST,true);
-        echo "</pre>";
+        echo "</pre>"; --}}
 ?>
 </div>

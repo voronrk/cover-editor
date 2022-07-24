@@ -48,9 +48,7 @@ class BackgroundController extends Controller
             $background = Background::create([
                 'bg' => $path
             ]);
-
-        // return redirect('/edit');
-        return redirect()->route('edit');
+        return redirect()->route('edit', ['bg' => $background]);
     }
 
     /**
@@ -61,7 +59,7 @@ class BackgroundController extends Controller
      */
     public function show($id)
     {
-        //
+        return Background::find($id)->bg;
     }
 
     /**
