@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\BackgroundController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
+
+Route::get('/edit', function () {
+    return view('editor');
+})->name('edit');
+
+Route::post('/add-text', function () {
+    return view('editor');
+})->name('add-text');
