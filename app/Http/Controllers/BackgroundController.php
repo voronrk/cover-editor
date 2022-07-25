@@ -36,12 +36,6 @@ class BackgroundController extends Controller
      */
     public function store(Request $request)
     {
-        // echo "<pre>";
-        // // echo print_r($request->collect(),true);
-        // echo print_r($request->all(),true);
-        // echo "</pre>";
-        // die();
-
             $file = $request->background;
             $upload_folder = 'public/img/bg';
             $path = Storage::putFile($upload_folder, $file);
@@ -59,7 +53,7 @@ class BackgroundController extends Controller
      */
     public function show($id)
     {
-        return Background::find($id)->bg;
+        return Background::find($id)[0]->bg;
     }
 
     /**

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Background;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\BackgroundController;
+use Intervention\Image\Facades\Image;
 
 class Editor extends Component
 {
@@ -18,13 +19,11 @@ class Editor extends Component
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, BackgroundController $bg)
     {
-        // $this->backgroundImage = [BackgroundController::class, 'show'];
-        echo "<pre>";
-        echo print_r($request->all(),true);
-        // echo print_r($this->backgroundImage,true);
-        echo "</pre>";
+        $backgroundContent = Storage::get($bg->show($request->all()));
+        $this->backgroundImage = Image::make($backgroundContent);
+        echo print_r($this->backgroundImage,true);
         die();
     }
 
@@ -35,6 +34,6 @@ class Editor extends Component
      */
     public function render()
     {
-        return view('components.editor');
+        return view('components.editor', ['background' => $this->backgroundImage]);
     }
 }

@@ -1,10 +1,7 @@
-<div>
-
-<div>
-<img src="">
+<img src="{{ $background }}">
 </div>
 <form class="form" method="POST" action={{route('add-text')}}>
-@csrf
+    @csrf
     <div class="field">
       <label class="label">Имя автора</label>
       <div class="control">
@@ -22,9 +19,5 @@
     </div>
 </form>
 
-<?php
-        {{-- echo "<pre>";
-        echo print_r($_REQUEST,true);
-        echo "</pre>"; --}}
-?>
+
 </div>
