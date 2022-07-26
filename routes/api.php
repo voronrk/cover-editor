@@ -21,4 +21,3 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/upload', [BackgroundController::class, 'store'])->name('upload');
-Route::get('/background.get', [BackgroundController::class, 'show'])->name('background.get');
