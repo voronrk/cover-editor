@@ -47,7 +47,7 @@ return [
         'bg' => [
             'driver' => 'local',
             'root' => storage_path('app/public/bg'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL').'/public/bg',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -55,7 +55,7 @@ return [
         'cover' => [
             'driver' => 'local',
             'root' => storage_path('app/public/cover'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL').'/public/cover',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -91,6 +91,7 @@ return [
         public_path('storage') => storage_path('app/public'),
         public_path('bg') => storage_path('app/public/bg'),
         public_path('cover') => storage_path('app/public/cover'),
+        public_path('fonts') => storage_path('app/public/fonts'),
     ],
 
 ];

@@ -1,6 +1,4 @@
 <div>
-    <!-- 
-  <options=bold>“ People find pleasure in different ways. I find it in keeping my mind clear. ”</>
-  <fg=gray>— Marcus Aurelius</>
- -->
+<img src="{{ $cover['previewPath'] }}">
+<a class='button is-primary' href="{{ $cover['downloadURL'] }}">Скачать</a>
 </div>

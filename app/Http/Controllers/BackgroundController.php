@@ -37,11 +37,14 @@ class BackgroundController extends Controller
     public function store(Request $request)
     {
             $file = $request->background;
-            $title = $request->title;
             $path = Storage::disk('bg')->putFile('/',$file);
             $background = Background::create([
                 'bg' => $path,
-                'title' => $title,
+                'title' => $request->title,
+                'width' => $request->width,
+                'height' => $request->height,
+                'x' => $request->x,
+                'y' => $request->y,
             ]);
         return redirect()->route('result', ['bg' => $background]);
     }

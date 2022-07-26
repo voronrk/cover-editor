@@ -4,13 +4,18 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use Illuminate\Http\Request;
-use App\Models\Background;
-use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\BackgroundController;
-use Intervention\Image\Facades\Image;
+use App\Services\Cover;
+
+// use App\Models\Background;
+// use Illuminate\Support\Facades\Storage;
+// use Intervention\Image\Facades\Image;
 
 class Result extends Component
 {
+
+    public $cover;
+    
     /**
      * Create a new component instance.
      *
@@ -18,12 +23,7 @@ class Result extends Component
      */
     public function __construct(Request $request, BackgroundController $bg)
     {
-        $this->title = $bg->show($request->all())->title;
-        $this->bg = $bg->show($request->all())->bg;
-        $backgroundContent = Storage::disk('bg')->get($this->bg);
-        $this->cover = Image::make($backgroundContent);
-        echo print_r($this->cover,true);
-        die();
+        $this->cover = Cover::index($bg->show($request->all()));
     }
 
     /**

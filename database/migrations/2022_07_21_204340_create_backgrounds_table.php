@@ -18,7 +18,12 @@ return new class extends Migration
             $table->timestamps();
             $table->string('bg');
             $table->string('title');
-            $table->string('result')->nullable();
+            $table->integer('width');
+            $table->integer('height');
+            $table->integer('x');
+            $table->integer('y');
+            $table->string('cover')->nullable();
+            $table->string('preview')->nullable();
         });
     }
 
