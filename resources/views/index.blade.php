@@ -9,7 +9,7 @@
 </head>
 <body class='section'>
 
-    <x-upload-background/>
+    <x-editor/>
     
 </body>
 </html>

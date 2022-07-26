@@ -1,23 +1,23 @@
-<img src="{{ $background }}">
-</div>
-<form class="form" method="POST" action={{route('add-text')}}>
-    @csrf
-    <div class="field">
-      <label class="label">Имя автора</label>
-      <div class="control">
-        <input class="input" name="author" type="text" placeholder="Введите имя автора">
-      </div>
-    </div>
-    <div class="field">
-      <label class="label">Название</label>
-      <div class="control">
-        <input class="input" name="title" type="text" placeholder="Введите название">
-      </div>
-      <div class="control">
-        <button class="button is-info" type="submit">Ok</button>
-      </div>
-    </div>
-</form>
+<div>
+    <form class="form" method="POST" enctype="multipart/form-data" action={{route('upload')}}>
+        @csrf
+        <div class="field">
+          <label class="label">Изображение для фона</label>
+          <div class="control">
+            <input class="input" name="background" type="file" placeholder="Загрузите изображение для фона">
+          </div>
+        </div>
 
+        <div class="field">
+          <label class="label">Название</label>
+          <div class="control">
+            <input class="input" name="title" type="text" placeholder="Введите название">
+          </div>
+        </div>
 
+        <div class="control">
+          <button class="button is-info" type="submit">Ok</button>
+        </div>
+        
+    </form>
 </div>

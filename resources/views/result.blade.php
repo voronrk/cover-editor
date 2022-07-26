@@ -9,7 +9,7 @@
 </head>
 <body class='section'>
 
-    <x-editor/>
+    <x-result/>
     
 </body>
 </html>

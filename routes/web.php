@@ -19,10 +19,10 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 
-Route::get('/edit', function () {
-    return view('editor');
-})->name('edit');
+Route::get('/result', function () {
+    return view('result');
+})->name('result');
 
-Route::post('/add-text', function () {
-    return view('editor');
-})->name('add-text');
+// Route::post('/add-text', function () {
+//     return view('editor');
+// })->name('add-text');

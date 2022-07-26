@@ -9,5 +9,5 @@ class Background extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['bg'];
+    protected $fillable = ['bg', 'title'];
 }

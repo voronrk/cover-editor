@@ -37,12 +37,13 @@ class BackgroundController extends Controller
     public function store(Request $request)
     {
             $file = $request->background;
-            $upload_folder = 'public/img/bg';
-            $path = Storage::putFile($upload_folder, $file);
+            $title = $request->title;
+            $path = Storage::disk('bg')->putFile('/',$file);
             $background = Background::create([
-                'bg' => $path
+                'bg' => $path,
+                'title' => $title,
             ]);
-        return redirect()->route('edit', ['bg' => $background]);
+        return redirect()->route('result', ['bg' => $background]);
     }
 
     /**
@@ -53,7 +54,7 @@ class BackgroundController extends Controller
      */
     public function show($id)
     {
-        return Background::find($id)[0]->bg;
+        return Background::find($id)[0];
     }
 
     /**

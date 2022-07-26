@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('bg');
+            $table->string('title');
+            $table->string('result')->nullable();
         });
     }
 
